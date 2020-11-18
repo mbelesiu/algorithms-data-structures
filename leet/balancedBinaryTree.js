@@ -22,9 +22,16 @@ var isBalanced = function(root) {
       if(node.left === null && node.right === null) {
           return 1;
       }
+      let left_val;
+      let right_val;
+      if(result){
+           left_val = helper(node.left);
+           right_val = helper(node.right);
+      } else {
+           left_val = 0;
+           right_val = 0;
+      }
 
-      const left_val = helper(node.left);
-      const right_val = helper(node.right);
 
       if(Math.abs(left_val-right_val) > 1){
           result = false;
