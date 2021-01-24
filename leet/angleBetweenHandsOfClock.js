@@ -6,9 +6,6 @@
  * @return {number}
  */
 var angleClock = function (hour, minutes) {
-  if (hour === 12) {
-    hour = 0;
-  }
   const minuteAngleFromNoon = (360 / 60) * minutes;
   const hourAngleFromNoon = (360 / 12) * hour + (.5 * minutes);
   const result = Math.abs(hourAngleFromNoon - minuteAngleFromNoon);
