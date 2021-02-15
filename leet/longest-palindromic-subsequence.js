@@ -26,7 +26,6 @@ var longestPalindromeSubseq = function (str) {
 // 4
 // One possible longest palindromic subsequence is "bbbb".
  
-
 // Example 2:
  
 // Input:
