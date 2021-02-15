@@ -28,7 +28,7 @@ var longestPalindromeSubseq = function (str) {
  
 
 // Example 2:
-
+ 
 // Input:
 // "cbbd"
 // Output:
