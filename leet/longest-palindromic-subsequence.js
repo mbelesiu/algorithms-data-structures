@@ -19,8 +19,8 @@ var longestPalindromeSubseq = function (str) {
 
 
 // Example 1:
-// Input:
 
+// Input:
 // "bbbab"
 // Output:
 // 4
@@ -28,8 +28,8 @@ var longestPalindromeSubseq = function (str) {
  
 
 // Example 2:
-// Input:
 
+// Input:
 // "cbbd"
 // Output:
 // 2
