@@ -21,46 +21,48 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-  let r = 0;
-  let result = null;
-  let currentNode = null;
+    let r = 0;
+    let result = new ListNode(-1, null);
+    let currentNode = result;
 
-  while(l1 !== null || l2 !== null) {
-      let d = 0;
-      if (l1 === null){
-          d = l2.val + r;
-          l2 = l2.next;
-          //move l2 next
-      } else if (l2 === null) {
-          d = l1.val + r;
-          l1 = l1.next
-          //move l1 next
-      } else {
-          d = l1.val + l2.val + r;
-          l2 = l2.next;
-          l1 = l1.next;
-          // move both
-      }
-              if (d >= 10) {
-          d %= 10;
-          r = 1;
-      } else {
-          r = 0;
-      }
-      if (result === null){
-          result = new ListNode(d, null)
-          currentNode = result;
-      } else {
-          currentNode.next = new ListNode(d);
-          currentNode = currentNode.next;
-      }
+    while (l1 !== null || l2 !== null) {
+        let d = 0;
+        if (l1 === null) {
+            d = l2.val + r;
+            l2 = l2.next;
+            //move l2 next
+        } else if (l2 === null) {
+            d = l1.val + r;
+            l1 = l1.next
+            //move l1 next
+        } else {
+            d = l1.val + l2.val + r;
+            l2 = l2.next;
+            l1 = l1.next;
+            // move both
+        }
 
-  }
-  if(r === 1) {
-      currentNode.next = new ListNode(1);
-  }
-  return result;
+        // see if there is a remainder
+        r = d >= 10 ? 1 : 0
+        d %= 10;
+
+        currentNode.next = new ListNode(d);
+        currentNode = currentNode.next;
+
+    }
+    if (r === 1) {
+        currentNode.next = new ListNode(1);
+    }
+    return result.next;
 };
+
+
+
+    //for each number in each linked list
+    // add the two togther
+    // if that number is greater than 10
+    //  mod the answer, use the remained as the value
+    // add one to the next node over
 
 
 
