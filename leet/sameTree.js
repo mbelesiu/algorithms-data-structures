@@ -15,17 +15,50 @@
  * @param {TreeNode} q
  * @return {boolean}
  */
-var isSameTree = function(p, q) {
-  if(p === null && q === null){
-      return true;
-  }
-  if(p=== null || q === null){
-      return false;
-  }
-  if(p.val !== q.val){
-      return false;
-  }
 
-  return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
+// Depth First Search
+// Use Recursion
+var isSameTree = function (p, q) {
+    if (p === null && q === null) {
+        return true;
+    }
+    if (p === null || q === null) {
+        return false;
+    }
+    if (p.val !== q.val) {
+        return false;
+    }
 
+    return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
+
+};
+
+// Breath First Search
+// Uses Queues
+var isSameTree = function (p, q) {
+
+    const queue = [p, q];
+
+    while (queue.length > 0) {
+        let v1 = queue.shift();
+        let v2 = queue.shift();
+
+        if (v1 === null && v2 == null) {
+            continue;
+        }
+        if (v1 === null || v2 == null) {
+            return false;
+        }
+
+        if (v1.val !== v2.val) {
+            return false
+        }
+
+        queue.push(v1.left)
+        queue.push(v2.left)
+        queue.push(v1.right)
+        queue.push(v2.right)
+
+    }
+    return true
 };
