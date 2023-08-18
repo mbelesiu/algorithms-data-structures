@@ -32,7 +32,7 @@ var levelOrder = function(root) {
   }
   const queue = [root];
   const result = [];
-  let p = 0;
+  let p = 0;c
   let nodesThisLevel = 1;
   let nodesNextLevel = 0;
   let nodesSeen = 0;
