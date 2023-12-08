@@ -5,7 +5,7 @@
 //Explanation
 // Since no divide is allowed, you need to use this voodoo math magic bullshit
 // using two arrays, one going left and the other going right, you need to fill
-// each index with a multiplcation of that index with the total prod, starting at 1
+// each index with a multiplication of that index with the total prod, starting at 1
 // so for left, and using [1,2,3,4]
 //              [1, (1)*1, (1)*2, (2)*3] == [1,1,3,6]
 // for the right
@@ -13,6 +13,8 @@
 // then multiply the two together.. 
 //              [24,12,8,6]
 // tada!?....... 🙄
+// ok thinking this a little more, by offsetting it by one, you are missing the number at it's current position. 
+//Ok maybe that's kinda neat
 
 
 var productExceptSelf = function(nums) {
