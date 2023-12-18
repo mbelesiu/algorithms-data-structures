@@ -1,8 +1,4 @@
 // 523. Continuous Subarray Sum
-// Medium
-// 5.3K
-// 517
-// Companies
 // Given an integer array nums and an integer k, return true if nums has a good subarray or false otherwise.
 
 // A good subarray is a subarray where:
@@ -13,6 +9,14 @@
 
 // A subarray is a contiguous part of the array.
 // An integer x is a multiple of k if there exists an integer n such that x = n * k. 0 is always a multiple of k.
+
+// How to think about this one.
+// You are going to store the remainder of the current sum in respects to K 
+// (the number we are looking to have a multiple of)
+// You start with remainder 0 (in the case you find the number exactly)
+// and as you go through the array, you save all the remainders of the new sum. 
+// If you at aby point find that a remainder is in the hash table, then you won
+// otherwise, no dice 
 
 /**
  * @param {number[]} nums
@@ -55,3 +59,4 @@ var checkSubarraySum = function (nums, k) {
 
 // Input: nums = [23,2,6,4,7], k = 13
 // Output: false
+
