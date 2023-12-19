@@ -14,6 +14,8 @@
  * @param {number} high
  * @return {number}
  */
+
+// take a breadth... first 
 var rangeSumBST = function(root, low, high) {
     if(!root) {
         return
@@ -31,6 +33,24 @@ var rangeSumBST = function(root, low, high) {
         }
     }
     return sum
+};
+
+//dfs option
+
+var rangeSumBST = function(root, low, high) {
+    let allSum = 0
+    const dfs = (node) => {
+        if(!node) return
+        dfs(node.left)
+        dfs(node.right)
+        if(node.val >= low && node.val <= high){
+            allSum += node.val
+        }
+        return
+    }
+
+    dfs(root)
+    return allSum
 };
 
 // Example 1:

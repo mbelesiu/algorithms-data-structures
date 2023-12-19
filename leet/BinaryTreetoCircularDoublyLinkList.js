@@ -12,7 +12,7 @@ class Node {
     }
 }
 
-let root = null; 
+// let root = null; 
 
 const concatenate = (leftList, rightList) => {
     // If either of the list is empty, then 
