@@ -6,7 +6,6 @@
 // Notice that by initializing the pointer to a non-existent smallest number, the first call to next() will return the smallest element in the BST.
 
 // You may assume that next() calls will always be valid. That is, there will be at least a next number in the in-order traversal when next() is called.
-
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -18,34 +17,40 @@
 /**
  * @param {TreeNode} root
  */
-var BSTIterator = function (root) {
-    this. stack = []
-    this.pushAll(root)
-}
+var BSTIterator = function(root) {
+    this.stack = []
+    this.pushAllLeft(root)
+};
 
 /**
  * @return {number}
  */
-BSTIterator.prototype.next = function () {
+BSTIterator.prototype.next = function() {
     node = this.stack.pop()
-    this.pushAll(node.right)
+    this.pushAllLeft(node.right)
     return node.val
-
 };
 
 /**
  * @return {boolean}
  */
-BSTIterator.prototype.hasNext = function () {
+BSTIterator.prototype.hasNext = function() {
     return this.stack
 };
 
-BSTIterator.prototype.pushAll = function(node) {
+BSTIterator.prototype.pushAllLeft = function(node) {
     while(node) {
         this.stack.push(node)
         node = node.left
     }
-};
+} 
+
+/** 
+ * Your BSTIterator object will be instantiated and called as such:
+ * var obj = new BSTIterator(root)
+ * var param_1 = obj.next()
+ * var param_2 = obj.hasNext()
+ */
 
 /** 
  * Your BSTIterator object will be instantiated and called as such:
