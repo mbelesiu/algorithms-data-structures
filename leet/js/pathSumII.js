@@ -53,7 +53,7 @@ var pathSum = function (root, sum) {
 
 };
 
-Example:
+// Example:
 
 // Given the below binary tree and sum = 22,
 

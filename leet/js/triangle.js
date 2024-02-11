@@ -21,7 +21,7 @@ var minimumTotal = function(triangle) {
   return minArr[0];
 };
 
-Example 1:
+// Example 1:
 
 // Input: triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
 // Output: 11
