@@ -19,17 +19,17 @@ var longestPalindrome = function(s) {
           if (s[i].toLowerCase() === s[j].toLowerCase()) {
               let k = i;
               let l = j;
-              let amIReal = true;
+              let isPalindrome = true;
               while (k <= l) {
                   if(s[k] !== s[l]){
-                      amIReal = false;
+                      isPalindrome = false;
                       break;
                   }
                   k++;
                   l--;
               }
 
-              if ((substring.length > result.length) && amIReal){
+              if ((substring.length > result.length) && isPalindrome){
                   result = substring;
               }
           }
