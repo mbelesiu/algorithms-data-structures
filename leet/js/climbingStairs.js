@@ -2,6 +2,31 @@
 
 // Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
+// Think about it this way. You're looking for a way to reach n, what path options do you have? 
+// Well there are only two ways to get to n. Either you take a path and end it with a +1 or another 
+// path and end it with a +2. So where do you find all the paths that only need a +1 to reach path(n)? 
+// You find them at path(n-1). In the same way, where do you find all the paths that only need a +2 to reach path(n)? 
+// You find them at path(n-2). So to find all the paths that can reach n you only need to calculate 
+// path(n) = path(n-1) + path (n-2).
+
+var climbStairs = function(n) {
+  if(n < 2) return 1
+
+  let firstStep = 1
+  let secondStep = 1
+  let thirdStep = 0
+
+  for (let i = 2; i <= n; i++) {
+      thirdStep = firstStep + secondStep
+      firstStep = secondStep
+      secondStep = thirdStep
+  }
+
+  return thirdStep
+};
+
+
+
 /*
  * @param {number} n
  * @return {number}
